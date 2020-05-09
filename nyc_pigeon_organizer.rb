@@ -4,9 +4,9 @@ def nyc_pigeon_organizer(data)
   # write your code here!
   
   pigeon_name_hash={}
-  pigeon_name_hash=data.reduce({}) do |memo, (attribute_type, attribute_value_hash)|
+  pigeon_name_hash=data.reduce(nil) do |memo, (attribute_type, attribute_value_hash)|
     memo = pigeon_name_hash if !memo
-    memo = attribute_value_hash.reduce({}) do |memo2, (attribute_value, array_of_names)|
+    memo = attribute_value_hash.reduce(nil) do |memo2, (attribute_value, array_of_names)|
       memo2 = memo if !memo2
       puts memo2
       array_of_names.each do |e|
