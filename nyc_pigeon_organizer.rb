@@ -8,15 +8,10 @@ def nyc_pigeon_organizer(data)
     memo = pigeon_name_hash if !memo
     memo = attribute_value_hash.reduce(nil) do |memo2, (attribute_value, array_of_names)|
       memo2 = memo if !memo2
-      puts memo2
       array_of_names.each do |e|
         memo2[e]={} if !memo2[e]
         memo2[e][attribute_type]=[] if !memo2[e][attribute_type]
-        #puts "before..."
-        #puts memo2
         memo2[e][attribute_type].push(attribute_value.to_s)
-        #puts "after..."
-        #p memo2
       end
     memo
     end
